@@ -1,12 +1,12 @@
-"use client"
-import { ChangeEvent, useState } from "react"
+'use client'
+import { ChangeEvent, useState } from 'react'
 
 interface Props {
   createTodo: (value: string) => void
 }
 
 const AddTodo = ({ createTodo }: Props) => {
-  const [input, setInput] = useState("")
+  const [input, setInput] = useState('')
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value)
@@ -14,14 +14,14 @@ const AddTodo = ({ createTodo }: Props) => {
 
   const handleAdd = async () => {
     createTodo(input)
-    setInput("")
+    setInput('')
   }
 
   return (
     <div className="w-full flex gap-1 mt-2">
       <input
         type="text"
-        className="w-full px-2 py-1 border border-gray-200 rounded outline-none"
+        className="w-full px-2 py-1 text-black border border-gray-200 rounded outline-none"
         onChange={handleInput}
         value={input}
       />
@@ -36,4 +36,3 @@ const AddTodo = ({ createTodo }: Props) => {
 }
 
 export default AddTodo
-

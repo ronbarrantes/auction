@@ -1,9 +1,14 @@
-"use client"
-import { useState } from "react"
-import { todoType } from "@/types/todoType"
-import Todo from "./Todo"
-import AddTodo from "./AddTodo"
-import { addTodo, deleteTodo, editTodo, toggleTodo } from "@/actions/todoActions"
+'use client'
+import { useState } from 'react'
+import { todoType } from '@/types/todoType'
+import Todo from './Todo'
+import AddTodo from './AddTodo'
+import {
+  addTodo,
+  deleteTodo,
+  editTodo,
+  toggleTodo,
+} from '@/actions/todoActions'
 
 interface Props {
   todos: todoType[]
@@ -18,30 +23,29 @@ const Todos = ({ todos }: Props) => {
   }
   const changeTodoText = (id: number, text: string) => {
     setTodoItems((prev) =>
-      prev.map(todo =>
-        (todo.id === id ? { ...todo, text } : todo)
-      )
+      prev.map((todo) => (todo.id === id ? { ...todo, text } : todo)),
     )
     editTodo(id, text)
   }
 
   const toggleIsDone = (id: number) => {
-    setTodoItems(prev =>
-      prev.map(todo => (todo.id === id ? { ...todo, done: !todo.done } : todo))
+    setTodoItems((prev) =>
+      prev.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo,
+      ),
     )
-    toggleTodo(id)
+    toggleTodo(id, !todoItems.find((todo) => todo.id === id)?.done)
   }
   const deleteTodoItem = (id: number) => {
-    setTodoItems(prev => prev.filter(todo => todo.id !== id))
+    setTodoItems((prev) => prev.filter((todo) => todo.id !== id))
     deleteTodo(id)
   }
-
 
   return (
     <main>
       <div>To-do app</div>
       <div>
-        {todoItems.map(todo => (
+        {todoItems.map((todo) => (
           <Todo
             key={todo.id}
             todo={todo}
@@ -51,10 +55,9 @@ const Todos = ({ todos }: Props) => {
           />
         ))}
       </div>
-      <AddTodo />
+      <AddTodo createTodo={createTodo} />
     </main>
   )
 }
 
 export default Todos
-
