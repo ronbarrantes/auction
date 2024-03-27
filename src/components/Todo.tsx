@@ -61,9 +61,8 @@ const Todo = ({
         value={text}
         onChange={handleTextChange}
         readOnly={!editing}
-        className={`${
-          todo.done ? 'line-through' : ''
-        } outline-none read-only:border-transparent text-black focus:border border-gray-200 rounded px-2 py-1 w-full`}
+        className={`${todo.done ? 'line-through' : ''
+          } outline-none read-only:border-transparent text-black focus:border border-gray-200 rounded px-2 py-1 w-full`}
       />
       <div className="flex gap-1 ml-auto">
         {editing ? (
@@ -85,14 +84,14 @@ const Todo = ({
         {editing ? (
           <button
             onClick={handleCancel}
-            className="bg-green-600 text-gray-50 rounded px-2 w-14 py-1"
+            className="bg-green-600 text-gray-50 rounded px-2 w-fit py-1"
           >
             Close
           </button>
         ) : (
           <button
             onClick={handleDelete}
-            className="bg-blue-400 text-blue-50 rounded w-14 px-2 py-1"
+            className="bg-blue-400 w-fit text-blue-50 rounded px-2 py-1"
           >
             Delete
           </button>
@@ -103,3 +102,4 @@ const Todo = ({
 }
 
 export default Todo
+
