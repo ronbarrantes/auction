@@ -6,3 +6,8 @@ export const todo = pgTable("todo", {
   done: boolean("done").default(false).notNull(),
 });
 
+// export const user = pgTable("user", {
+//   id: integer("id").unique(),
+//   username: text("text").unique()
+// })
+
