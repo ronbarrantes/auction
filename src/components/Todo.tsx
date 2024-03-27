@@ -49,10 +49,10 @@ const Todo = ({
   }
 
   return (
-    <div className="flex item-center text-black gap-2 p-4 border-gray-200 border rounded-lg">
+    <div className="flex align-middle text-black gap-2 p-4 border-gray-200 border rounded-lg">
       <input
         type="checkbox"
-        className="text-blue-200 rounded-sm h-4 w-4"
+        className="text-blue-200 rounded-sm mt-2 h-4 w-4 border border-green-500"
         checked={isDone}
         onChange={handleIsDone}
       />
