@@ -8,6 +8,7 @@
     "start": "next start",
     "dk": "drizzle-kit push:pg",
     "lint": "next lint",
+    "env": "vercel env pull .env.local",
     "studio": "drizzle-kit studio"
   },
   "dependencies": {
