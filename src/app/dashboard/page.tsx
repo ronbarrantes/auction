@@ -8,9 +8,17 @@ export default async function Home() {
   // const data = await getData()
 
   return (
-    <div className="flex w-screen justify-center">
-      <div className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3">
-        Dashboard
+    <div className="flex flex-col w-screen justify-center">
+      <div className="flex w-full">
+        <div className="flex w-1/2 border border-red-500">
+          container 1
+        </div>
+        <div className="flex w-1/2 border border-red-500">
+          container2
+        </div>
+      </div>
+      <div className="flex w-full border border-green-500">
+        container 3
       </div>
     </div>)
 }
