@@ -3,7 +3,7 @@
 // import { getData } from "@/actions/todoActions";
 // import Todos from "@/components/Todos";
 
-export default async function Home() {
+export default async function Dashboard() {
   // noStore()
   // const data = await getData()
 
