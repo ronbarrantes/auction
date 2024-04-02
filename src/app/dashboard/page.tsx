@@ -11,14 +11,14 @@ export default async function Home() {
     <div className="flex flex-col w-screen justify-center">
       <div className="flex w-full">
         <div className="flex w-1/2 border border-red-500">
-          container 1
+          Quick Add form
         </div>
         <div className="flex w-1/2 border border-red-500">
-          container2
+          Quick info
         </div>
       </div>
       <div className="flex w-full border border-green-500">
-        container 3
+        Information table
       </div>
     </div>)
 }
