@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import React from "react";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { Inter as FontSans } from "next/font/google"
+import { cn } from "@/lib/utils"
 
-const inter = Inter({ subsets: ["latin"] });
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 export const metadata: Metadata = {
   title: "Scheduling app",
@@ -21,7 +25,6 @@ const Nav = () => {
       </li>
       <li>
         <Link href="/dashboard" className="p-2 py-1 hover:bg-slate-300">
-
           Dashboard
         </Link>
       </li>
@@ -33,7 +36,6 @@ const Nav = () => {
     </ul>
   )
 }
-
 
 const PageLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -49,8 +51,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
         <PageLayout>
           {children}
         </PageLayout>
