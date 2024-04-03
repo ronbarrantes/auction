@@ -1,11 +1,44 @@
+import { DataTable } from "./data-table"
+import { Payment, columns } from "./columns"
 
-// import { unstable_noStore as noStore } from "next/cache"
-// import { getData } from "@/actions/todoActions";
-// import Todos from "@/components/Todos";
+async function getData(): Promise<Payment[]> {
+  return [
+    {
+      id: "12345",
+      amount: 100,
+      status: 'pending',
+      email: 'sample@email.com'
+    },
+    {
+      id: "12345",
+      amount: 400,
+      status: 'success',
+      email: 'sample@email.com'
+    },
+    {
+      id: "67890",
+      amount: 300,
+      status: 'failed',
+      email: 'sample@email.com'
+    },
+    {
+      id: "98765",
+      amount: 1000,
+      status: 'processing',
+      email: 'sample@email.com'
+    },
+    {
+      id: "23489",
+      amount: 250,
+      status: 'success',
+      email: 'sample@email.com'
+    },
+  ]
+}
+
 
 export default async function Dashboard() {
-  // noStore()
-  // const data = await getData()
+  const data = await getData()
 
   return (
     <div className="flex flex-col w-screen justify-center">
@@ -18,7 +51,7 @@ export default async function Dashboard() {
         </div>
       </div>
       <div className="flex w-full border border-green-500">
-        Information table
+        <DataTable columns={columns} data={data} />
       </div>
     </div>)
 }
